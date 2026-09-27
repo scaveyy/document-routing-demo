@@ -1,0 +1,11 @@
+{
+  "rules": [
+    {"category": "invoice", "destination": "finance"},
+    {"category": "request", "destination": "operations"}
+  ],
+  "messages": [
+    {"message_id": "MSG-001", "category": "invoice", "attachment_name": "sample-invoice.pdf", "content": "Invented invoice for office supplies."},
+    {"message_id": "MSG-002", "category": "unclear", "attachment_name": "note.pdf", "content": "Invented note with no routing rule."},
+    {"message_id": "MSG-001", "category": "invoice", "attachment_name": "sample-invoice.pdf", "content": "Invented invoice for office supplies."}
+  ]
+}
