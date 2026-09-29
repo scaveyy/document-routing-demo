@@ -23,6 +23,10 @@ The sample batch has three items: one clear route, one item with no rule, and on
 
 The tests cover replay, changed content, ambiguous rules, unsafe paths, invalid ledgers, and the fact that planning does not write files. GitHub Actions runs the tests on pushes and pull requests.
 
-## What this does not prove
+## Scope
 
-This is a local routing planner. It does not read email, classify documents, write to SharePoint, authenticate users, or prove that a real file was delivered. The category in the input is supplied by the caller. A real workflow would need trusted input, destination permissions, an atomic write and ledger step, monitoring, and a human review queue. Those parts are outside this demo.
+A local planner with fictional data: the category comes from the caller, and nothing is read from or written to a real mailbox or SharePoint.
+
+## How this maps to a production build
+
+I build this pattern in production on the Microsoft stack: Power Automate reads the mailbox, Azure OpenAI proposes a category, business rules validate it, and anything uncertain goes to a human review queue with an audit record. Production code and data stay private; this repo shows the decision logic in a form anyone can run.
